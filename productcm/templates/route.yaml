@@ -4,13 +4,13 @@ kind: Route
 metadata:
   name: {{ include "productcm.fullname" . }}
   labels:
-    {{- include "chart.labels" . | nindent 4 }}
+    {{- include "productcm.labels" . | nindent 4 }}
 spec:
   to:
     kind: Service
     name: {{ include "productcm.fullname" . }}
   port:
-    targetPort: http
+    targetPort: httpgit
   tls:
     termination: edge
     insecureEdgeTerminationPolicy: Redirect
