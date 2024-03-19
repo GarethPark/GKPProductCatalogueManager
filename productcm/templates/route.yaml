@@ -10,7 +10,7 @@ spec:
     kind: Service
     name: {{ include "productcm.fullname" . }}
   port:
-    targetPort: httpgit
+    targetPort: http
   tls:
     termination: edge
     insecureEdgeTerminationPolicy: Redirect

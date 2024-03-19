@@ -33,3 +33,5 @@ Create Helm Chart -
 helm create productcm
 
 Deploy to OpenShift 
+
+helm upgrade productcm ./productcm
