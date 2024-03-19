@@ -12,4 +12,12 @@ java -jar target/GKPProductCatalogueManager-0.0.1-SNAPSHOT.jar
 Local Swagger -
 http://localhost:8080/swagger-ui/index.html#/hello-world-controller/sayHello
 
+Create Docker Image locally - 
 
+docker build -t productcm .
+
+Run Docker Image locally - 
+
+docker run -p 8080:8080 productcm:latest
+
+(not 8443)
