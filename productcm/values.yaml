@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository:garethpark/productcm
-  pullPolicy:Always
-  #OverridestheimagetagwhosedefaultisthechartappVersion.
-  tag:"latest"
+  repository: garethpark/productcm
+  pullPolicy: Always
+  # Overrides theimage tag whose default is the chartapp Version.
+  tag: "latest"
 
 imagePullSecrets: []
 nameOverride: ""
