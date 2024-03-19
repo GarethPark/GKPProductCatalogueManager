@@ -20,4 +20,8 @@ Run Docker Image locally -
 
 docker run -p 8080:8080 productcm:latest
 
-(not 8443)
+Tag and push to DockerHub -
+docker tag productcm garethpark/productcm:latest
+docker push garethpark/productcm:latest
+
+
