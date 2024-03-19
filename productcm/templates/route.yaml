@@ -1,0 +1,16 @@
+# templates/route.yaml
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: {{ include "chart.fullname" . }}
+  labels:
+    {{- include "chart.labels" . | nindent 4 }}
+spec:
+  to:
+    kind: Service
+    name: {{ include "chart.fullname" . }}
+  port:
+    targetPort: http
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect

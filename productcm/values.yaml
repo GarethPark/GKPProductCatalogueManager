@@ -69,12 +69,14 @@ resources: {}
   #   memory: 128Mi
 
 livenessProbe:
-  initialDelaySeconds: 10
+  initialDelaySeconds: 20
   periodSeconds: 5
 
 readinessProbe:
-  initialDelaySeconds: 10
+  initialDelaySeconds: 20
   periodSeconds: 5
+
+createRoute: true
 
 autoscaling:
   enabled: false
