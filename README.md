@@ -24,4 +24,5 @@ Tag and push to DockerHub -
 docker tag productcm garethpark/productcm:latest
 docker push garethpark/productcm:latest
 
-
+Create Helm Chart -
+helm create productcm
