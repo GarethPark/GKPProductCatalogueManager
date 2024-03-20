@@ -3,7 +3,9 @@ pipeline {
 
     stages {
         stage('Initial test stage') {
-             sh 'echo $PATH'
+            steps {
+                sh 'echo $PATH'
+            }
         }
     }
 }
