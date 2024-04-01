@@ -1,8 +1,14 @@
 package com.gkpProductCatalogueManager.domain.services
 
-class ProductService (){
+import com.gkpProductCatalogueManager.domain.models.Product
+import com.gkpProductCatalogueManager.domain.repositories.ProductRepository
+import java.util.*
 
-    fun getProduct(id: Long = 0L): Long {
-        return 1L
+class ProductService (
+    private val productRepository : ProductRepository
+
+) {
+    fun getProduct(id: Long = 0L): Optional<Product> {
+        return productRepository.findById(id)
     }
 }

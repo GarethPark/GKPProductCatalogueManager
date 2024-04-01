@@ -11,7 +11,7 @@ class ProductServiceTest {
     private lateinit var productService: ProductService
 
     @BeforeEach
-    fun setuo(){
+    fun setup(){
         productService = ProductService()
     }
 
