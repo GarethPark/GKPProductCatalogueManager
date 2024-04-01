@@ -3,6 +3,7 @@ package com.gkpProductCatalogueManager.domain.services.unit
 import com.gkpProductCatalogueManager.domain.models.Product
 import com.gkpProductCatalogueManager.domain.repositories.ProductRepository
 import com.gkpProductCatalogueManager.domain.services.ProductService
+import com.gkpProductCatalogueManager.testUtils.ProductDataFactory
 import org.junit.jupiter.api.Test
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.BeforeEach
@@ -23,10 +24,10 @@ class ProductServiceTest {
 
     @Test
     fun getProductsWithValidProductId_shouldReturnProduct(){
-        val existingProduct
+        val existingProduct = ProductDataFactory.TestProduct.validProduct(1)
 
         `when`(productRepository.findById(anyLong())).thenReturn(Optional.of(existingProduct))
         val productResponse = productService.getProduct(1)
-        assertThat(productResponse).isNotNull().extracting("id").isEqualTo(1L)
+        assertThat(productResponse).isNotNull.extracting("id").isEqualTo(1L)
     }
 }
