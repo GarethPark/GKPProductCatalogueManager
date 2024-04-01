@@ -56,7 +56,10 @@ class ProductServiceUnitTest {
         assertThat(productResponse).isNotNull.hasSize(3)
     }
 
+    @Test
     fun getAllProductsWhenNoneExist_shouldReturnAnEmptyList(){
 
+        val productResponse = productService.getAllProducts()
+        assertThat(productResponse).isNotNull.hasSize(0)
     }
 }
