@@ -41,14 +41,11 @@ class ProductServiceUnitTest {
 
     @Test
     fun getAllProductsWhenExist_shouldReturnAllProducts(){
-        val existingProduct1 = ProductDataFactory.TestProduct.validProduct(1)
-        val existingProduct2 = ProductDataFactory.TestProduct.validProduct(2)
-        val existingProduct3 = ProductDataFactory.TestProduct.validProduct(3)
-        val existingProducts : MutableList<Product> = mutableListOf()
-
-        existingProducts.add(existingProduct1)
-        existingProducts.add(existingProduct2)
-        existingProducts.add(existingProduct3)
+        val existingProducts : MutableList<Product> = mutableListOf(
+            ProductDataFactory.TestProduct.validProduct(1),
+            ProductDataFactory.TestProduct.validProduct(2),
+            ProductDataFactory.TestProduct.validProduct(3)
+        )
 
         `when`(productRepository.findAll()).thenReturn(existingProducts)
 
