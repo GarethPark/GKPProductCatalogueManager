@@ -1,4 +1,4 @@
-package com.GKPProductCatalogueManager.web.controllers
+package com.gkpProductCatalogueManager.web.controllers
 
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController

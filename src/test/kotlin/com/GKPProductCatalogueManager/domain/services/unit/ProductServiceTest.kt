@@ -1,6 +1,6 @@
-package com.GKPProductCatalogueManager.domain.services.unit
+package com.gkpProductCatalogueManager.domain.services.unit
 
-import com.GKPProductCatalogueManager.domain.services.ProductService
+import com.gkpProductCatalogueManager.domain.services.ProductService
 import org.junit.jupiter.api.Test
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.BeforeEach

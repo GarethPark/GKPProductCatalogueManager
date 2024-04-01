@@ -1,4 +1,4 @@
-package com.GKPProductCatalogueManager
+package com.gkpProductCatalogueManager
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

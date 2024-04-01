@@ -1,4 +1,4 @@
-package com.GKPProductCatalogueManager
+package com.gkpProductCatalogueManager
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest

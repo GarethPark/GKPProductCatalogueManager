@@ -1,4 +1,4 @@
-package com.GKPProductCatalogueManager.domain.services
+package com.gkpProductCatalogueManager.domain.services
 
 class ProductService (){
 
