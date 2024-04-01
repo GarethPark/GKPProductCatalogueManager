@@ -12,7 +12,7 @@ import org.mockito.Mockito.*
 import java.util.Optional
 
 
-class ProductServiceTest {
+class ProductServiceUnitTest {
 
     private lateinit var productService: ProductService
     private lateinit var productRepository: ProductRepository
@@ -37,5 +37,26 @@ class ProductServiceTest {
         assertThrows<NoSuchElementException> {
             productService.getProduct(1)
         }
+    }
+
+    @Test
+    fun getAllProductsWhenExist_shouldReturnAllProducts(){
+        val existingProduct1 = ProductDataFactory.TestProduct.validProduct(1)
+        val existingProduct2 = ProductDataFactory.TestProduct.validProduct(2)
+        val existingProduct3 = ProductDataFactory.TestProduct.validProduct(3)
+        val existingProducts : MutableList<Product> = mutableListOf()
+
+        existingProducts.add(existingProduct1)
+        existingProducts.add(existingProduct2)
+        existingProducts.add(existingProduct3)
+
+        `when`(productRepository.findAll()).thenReturn(existingProducts)
+
+        val productResponse = productService.getAllProducts()
+        assertThat(productResponse).isNotNull.hasSize(3)
+    }
+
+    fun getAllProductsWhenNoneExist_shouldReturnAnEmptyList(){
+
     }
 }
