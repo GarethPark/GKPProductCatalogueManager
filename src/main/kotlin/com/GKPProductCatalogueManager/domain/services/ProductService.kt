@@ -15,4 +15,8 @@ class ProductService (
     fun getAllProducts(): List<Product>{
         return this.productRepository.findAll()
     }
+
+    fun createProduct(product: Product): Product{
+        return this.productRepository.save(product)
+    }
 }

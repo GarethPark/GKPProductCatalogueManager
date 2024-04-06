@@ -5,6 +5,8 @@ import jakarta.persistence.*
 @Table(schema = "PRODUCT_OWNER", name = "PRODUCT")
 data class Product(
     @Column(name = "ID")
-    var id: Long? = null
+    var id: Long? = null,
+    @Column(name = "NAME")
+    var name: String? = null
 )
 

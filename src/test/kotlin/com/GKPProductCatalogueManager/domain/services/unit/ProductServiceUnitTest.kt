@@ -59,4 +59,17 @@ class ProductServiceUnitTest {
         val productResponse = productService.getAllProducts()
         assertThat(productResponse).isNotNull.hasSize(0)
     }
+
+    @Test
+    fun createProductWithValidData_shouldReturnAProductId(){
+        val newProduct = Product(name = "TestProduct")
+        val savedProduct = ProductDataFactory.TestProduct.validProduct(1, "TestProduct")
+
+        `when`(productRepository.save(any())).thenReturn(savedProduct)
+        val productResponse = productService.createProduct(newProduct)
+        assertThat(productResponse).isNotNull
+        assertThat(productResponse).extracting("name").isEqualTo("TestProduct")
+
+        verify(productRepository, times(1)).save(newProduct)
+    }
 }
