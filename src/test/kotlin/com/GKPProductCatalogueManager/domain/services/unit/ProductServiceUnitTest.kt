@@ -72,4 +72,9 @@ class ProductServiceUnitTest {
 
         verify(productRepository, times(1)).save(newProduct)
     }
+
+    @Test
+    fun createProductWithInvalidData_shouldReturnAnError(){
+
+    }
 }
