@@ -82,4 +82,16 @@ class ProductServiceUnitTest {
         assertThat(exception.message).isEqualTo("Product name cannot be null")
 
     }
+
+    @Test
+    fun updateProductWithValidData_shouldReturnUpdatedProduct(){
+        val existingProduct = Product(name = "TestProduct", id = 1L)
+
+        `when`(productRepository.save(any())).thenReturn(existingProduct)
+        val productResponse = productService.updateProduct(existingProduct)
+        assertThat(productResponse).isNotNull
+        assertThat(productResponse).extracting("name").isEqualTo("TestProduct")
+
+        verify(productRepository, times(1)).save(existingProduct)
+    }
 }

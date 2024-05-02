@@ -22,4 +22,8 @@ class ProductService (
         }
         return this.productRepository.save(product)
     }
+
+    fun updateProduct(product: Product): Product{
+        return this.productRepository.save(product)
+    }
 }
