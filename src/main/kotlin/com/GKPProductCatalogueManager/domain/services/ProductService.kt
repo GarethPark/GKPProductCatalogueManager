@@ -17,6 +17,9 @@ class ProductService (
     }
 
     fun createProduct(product: Product): Product{
+        if (product.name == null) {
+            throw IllegalArgumentException("Product name cannot be null")
+        }
         return this.productRepository.save(product)
     }
 }

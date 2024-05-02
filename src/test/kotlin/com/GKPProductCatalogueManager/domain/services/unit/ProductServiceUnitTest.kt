@@ -75,6 +75,11 @@ class ProductServiceUnitTest {
 
     @Test
     fun createProductWithInvalidData_shouldReturnAnError(){
+        val invalidProduct = Product(name = null)
+        val exception = assertThrows<IllegalArgumentException> {
+            productService.createProduct(invalidProduct)
+        }
+        assertThat(exception.message).isEqualTo("Product name cannot be null")
 
     }
 }
