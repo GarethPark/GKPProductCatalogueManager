@@ -23,7 +23,14 @@ class ProductService (
         return this.productRepository.save(product)
     }
 
-    fun updateProduct(product: Product): Product{
-        return this.productRepository.save(product)
+    fun updateProduct(productId: Long, updatedProductData: Product): Product{
+        val existingProduct = productRepository.findById(productId).orElseThrow(){
+            NoSuchElementException("Product with $productId does not exist")
+        }
+
+        existingProduct.name = updatedProductData.name
+        existingProduct.price = updatedProductData.price
+
+        return this.productRepository.save(existingProduct)
     }
 }
