@@ -8,10 +8,11 @@ import org.junit.jupiter.api.Test
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.assertThrows
+
 import org.mockito.Mockito.*
+import org.mockito.kotlin.argumentCaptor
 import java.math.BigDecimal
 import java.util.Optional
-
 
 
 class ProductServiceUnitTest {
@@ -95,12 +96,12 @@ class ProductServiceUnitTest {
         `when`(productRepository.save(any())).thenReturn(updatedProductData)
 
         val result = productService.updateProduct(productId, updatedProductData)
-/*
+
         val productCaptor = argumentCaptor<Product>()
         verify(productRepository).save(productCaptor.capture())
         assertThat(productCaptor.firstValue.name).isEqualTo("Updated Name")
         assertThat(productCaptor.firstValue.price).isEqualTo(15.00)
         assertThat(result).isEqualTo(updatedProductData)
-*/
+
     }
 }
