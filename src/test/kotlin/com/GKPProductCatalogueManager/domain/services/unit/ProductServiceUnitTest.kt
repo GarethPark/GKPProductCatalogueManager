@@ -13,6 +13,7 @@ import org.mockito.Mockito.*
 import org.mockito.kotlin.argumentCaptor
 import java.math.BigDecimal
 import java.util.Optional
+import org.mockito.Mockito
 
 
 class ProductServiceUnitTest {
@@ -22,7 +23,7 @@ class ProductServiceUnitTest {
 
     @BeforeEach
     fun setup(){
-        productRepository = mock()
+        productRepository = Mockito.mock(ProductRepository::class.java)
         productService = ProductService(productRepository)
     }
 
